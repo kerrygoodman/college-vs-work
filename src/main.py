@@ -270,3 +270,5 @@ else:
         
         proj_a = simulate_scenario(row_a)
         proj_b = simulate_scenario(row_b)
+        
+        
