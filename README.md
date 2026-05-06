@@ -31,10 +31,8 @@ Customizable assumptions per scenario
 
 Year‑by‑year financial simulation
 
-Calculates annual:
-
-Income (part‑time during college, full‑time after).
-
+-Calculates annual:
+    -Income (part‑time during college, full‑time after).
 Total expenses (living expenses + tuition or training cost).
 
 Loan balance, using a fixed monthly payment formula.
