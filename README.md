@@ -154,6 +154,6 @@ Potential future enhancements:
 
 -Export simulation results to CSV for further analysis.
 
-AI usage disclosure
-Portions of the project structure and wording were developed with assistance from an AI coding assistant (Perplexity, powered by GPT‑5.1). All code has been reviewed and understood by the author, and the final design decisions, parameters, and logic were chosen by the author to meet course requirements.
+AI usage disclosure:
+Portions of the project structure and wording were developed with assistance from an AI coding assistant. All code has been reviewed and understood by the author, and the final design decisions, parameters, and logic were chosen by the author to meet course requirements.
 
