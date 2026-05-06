@@ -280,5 +280,7 @@ else:
         compare_df = pd.DataFrame({
             "year": proj_a["year"],
             f"savings_{name_a}": proj_a["savings"].values,
-            f"savings_{name-b}": proj_b["savings"].values,
+            f"savings_{name_b}": proj_b["savings"].values,
         }).set_index("year")
+        
+        st.line_chart(compare_df,)
