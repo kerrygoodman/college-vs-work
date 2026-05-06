@@ -229,5 +229,15 @@ if submitted:
         
         # Charts
         st.line_chart(
-            projection_df.set_index("year")[["savings"]]
+            projection_df.set_index("year")[["savings"]],
+            height=300,
         )
+        
+        st.line_chart(
+            projection_df.set_index("year")[["loan_balance"]],
+            height=300,
+        )
+        
+        # Summary metrics
+        final_row = projection_df.iloc[-1]
+        st
