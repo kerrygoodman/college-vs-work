@@ -176,15 +176,15 @@ At the top of the page, you’ll see a table of all saved scenarios and a count.
 
 Add a new scenario
 
-Fill in the form under “Add a New Scenario”.
+-Fill in the form under “Add a New Scenario”.
 
-Choose a path type (college or work).
+-Choose a path type (college or work).
 
-Enter the financial assumptions.
+-Enter the financial assumptions.
 
-Click Save scenario.
+-Click Save scenario.
 
-The scenario is appended to data/scenarios.csv and appears in the table.
+-The scenario is appended to data/scenarios.csv and appears in the table.
 
 Delete a scenario
 
