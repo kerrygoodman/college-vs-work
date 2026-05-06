@@ -3,9 +3,9 @@ This project is a Streamlit web app that helps users compare the long‑term fin
 Features
 Scenario manager
 
-Create, view, and delete named scenarios.
+-Create, view, and delete named scenarios.
 
-Two path types:
+-Two path types:
 
 college – includes years in school, tuition, and loans.
 
