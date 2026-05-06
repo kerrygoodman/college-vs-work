@@ -217,13 +217,13 @@ The app draws both savings curves on the same chart.
 A summary table shows final savings and loan balance for each scenario.
 
 Limitations and possible improvements
-Assumes a fixed salary growth rate and fixed monthly expenses.
+-Assumes a fixed salary growth rate and fixed monthly expenses.
 
-Tuition is modeled as a simple per‑year cost, not by semester or credit.
+-Tuition is modeled as a simple per‑year cost, not by semester or credit.
 
-Loan model assumes a single loan with constant interest rate and fixed payment.
+-Loan model assumes a single loan with constant interest rate and fixed payment.
 
-Taxes, inflation, and investment returns are not included.
+-Taxes, inflation, and investment returns are not included.
 
 Potential future enhancements:
 
