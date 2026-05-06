@@ -227,4 +227,7 @@ if submitted:
         
         st.dataframe(projection_df)
         
-        
+        # Charts
+        st.line_chart(
+            projection_df.set_index("year")[["savings"]]
+        )
