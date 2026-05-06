@@ -295,6 +295,6 @@ else:
             {
                 "scerario": [name_a, name_b],
                 "path_type": [row_a["path_type"], row_b["path_type"]],
-                "final_savings": [final_a["loan_balance"], final_b[""]]
+                "final_savings": [final_a["saving"], final_b["savings"]]
             }
         )
