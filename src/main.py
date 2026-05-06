@@ -278,5 +278,6 @@ else:
         
         # BUilds a comparison data frame
         compare_df = pd.DataFrame({
-            "year": proj
+            "year": proj_a["year"],
+            f"savings_{name_a}": p
         })
