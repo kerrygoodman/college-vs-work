@@ -53,6 +53,17 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
     simulation_years = int(row["simulation_years"])
     
     # Basic assumptions
+    years = list(range(simulation_years + 1))  # year 0 .. N
+    salary = []
+    expenses = []
+    loan_balance = []
+    savings = []
+    
+    # Loan payment (if any)
+    if loan_amount > 0 and loan_term_years > 0 and loan_interest_rate >0:
+        r = loan_interest_rate / 12  #monthly rate
+        n = loan_term_years * 12  #toatl months
+        monthly_payment = loan_amount * (r * (1 + r) ** n) / ((1 + r) ** n -1)
 
 #---------Streamlit app---------
 
