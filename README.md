@@ -13,21 +13,21 @@ Scenario manager
 
 Customizable assumptions per scenario
 
-Years in school.
+-Years in school.
 
-Tuition per year (college path).
+-Tuition per year (college path).
 
-Total loan amount, interest rate, and loan term (years).
+-Total loan amount, interest rate, and loan term (years).
 
-Starting salary and annual salary growth rate.
+-Starting salary and annual salary growth rate.
 
-Monthly living expenses.
+-Monthly living expenses.
 
-Part‑time monthly income during college (college path).
+-Part‑time monthly income during college (college path).
 
-One‑time training cost (work path).
+-One‑time training cost (work path).
 
-Number of years to simulate.
+-Number of years to simulate.
 
 Year‑by‑year financial simulation
 
