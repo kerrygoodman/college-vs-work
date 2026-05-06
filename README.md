@@ -60,12 +60,10 @@ Income
 
 -College path:
     -During school years: income is part_time_monthly_income × 12.
+    -After graduation: salary starts at starting_salary and grows annually by salary_growth_rate.
 
-After graduation: salary starts at starting_salary and grows annually by salary_growth_rate.
-
-Work path:
-
-Starts full‑time work at year 0 with starting_salary, growing annually by salary_growth_rate.
+-Work path:
+    -Starts full‑time work at year 0 with starting_salary, growing annually by salary_growth_rate.
 
 Expenses
 
