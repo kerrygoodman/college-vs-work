@@ -193,6 +193,7 @@ if submitted:
         "monthly_expenses": monthly_expenses,
         "training_cost": training_cost,
         "simulation_years": simulation_years,
+        "part_time_monthly_income": part_time_monthly_income,
     }
     
     #Append the new row to the data frame
