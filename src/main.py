@@ -255,5 +255,5 @@ if len(scenarios_df) < 2:
 else:
     # A multiselect to choose 2 scenarios to compare
     selected_names = st.multiselect(
-        
+        "Choose two scenarios to compare",
     )
