@@ -152,6 +152,14 @@ st.write("Number of scenarios:", len(scenarios_df))
 #--- Delete scenario controls ---
 if len(scenarios_df) > 0:
     st.markdown('### Delete a Scenario')
+    
+    scenario_to_delete = st.selectbox(
+        "Select a scenario to delete",
+        options=scenarios_df["name"].tolist(),
+        key="delete_select",
+    )
+    
+    if
 
 st.markdown("---")
 st.subheader("Add a New Scenario")
