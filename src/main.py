@@ -96,14 +96,14 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
         
         annual_expenses = base_annual_expense + tuition_this_year + training_this_year
                 
-        # Loan payments of this year
+        # ---Loan payments ---
         if current_loan > 0 and monthly_payment > 0:
             # Pay for up to 12 months or until loan is gone
             total_payment_year = 0.0
             for _ in range(12):
                 if current_loan <= 0:
                     break
-                interest = current_loan * (loan_interest_rate / 120)
+                interest = current_loan * (loan_interest_rate / 12.0)
                 principle = monthly_payment - interest
                 if principle > current_loan:
                     principle = current_loan
