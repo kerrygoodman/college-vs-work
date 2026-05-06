@@ -227,13 +227,13 @@ Taxes, inflation, and investment returns are not included.
 
 Potential future enhancements:
 
-Add separate expense categories (rent, food, transportation, etc.).
+-Add separate expense categories (rent, food transportation, etc.).
 
-Model multiple loans or changing interest rates.
+-Model multiple loans or changing interest rates.
 
-Include tax estimates or inflation adjustments.
+-Include tax estimates or inflation adjustments.
 
-Export simulation results to CSV for further analysis.
+-Export simulation results to CSV for further analysis.
 
 AI usage disclosure
 Portions of the project structure and wording were developed with assistance from an AI coding assistant (Perplexity, powered by GPT‑5.1). All code has been reviewed and understood by the author, and the final design decisions, parameters, and logic were chosen by the author to meet course requirements.
