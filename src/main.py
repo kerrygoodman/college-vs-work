@@ -256,4 +256,8 @@ else:
     # A multiselect to choose 2 scenarios to compare
     selected_names = st.multiselect(
         "Choose two scenarios to compare",
+        options=scenarios_df["name"].tolist(),
+        default=scenarios_df["name"].tolist()[:2],  #first two by default
     )
+    
+    if
