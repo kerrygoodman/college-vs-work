@@ -45,11 +45,10 @@ Scenario comparison
 
 -Select two scenarios (e.g., “College – CS Degree” vs “Work – Trade Job”).
 
-See both savings lines on a single chart.
+-See both savings lines on a single chart.
 
-View a summary table with:
-
-Scenario name.
+-View a summary table with:
+    -Scenario name.
 
 Path type (college or work).
 
