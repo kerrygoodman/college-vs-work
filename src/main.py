@@ -265,4 +265,8 @@ else:
     else:
         name_a, name_b = selected_names
         
-        row_a = scenarios_df[scenarios_df["name"] == name_a]
+        row_a = scenarios_df[scenarios_df["name"] == name_a].iloc[0]
+        row_b = scenarios_df[scenarios_df["name"] == name_b].iloc[0]
+        
+        proj_a = simulate_scenario(row_a)
+        proj_b = simulate_scenario(row_b)
