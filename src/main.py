@@ -217,4 +217,8 @@ if submitted:
                                      options=scenarios_df["name"].tolist(),
         )
         
+        # Find the selected scenario row
+        selected_row = scenarios_df[scenarios_df["name"] == selected_name].iloc[0]
+        
+        # Run the simulation
         
