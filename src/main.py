@@ -131,6 +131,7 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
             "savings": savings,
         }
     )
+    return df
 #---------Streamlit app---------
 
 st.set_page_config(page_title= "College vs Work Simulator", page_icon=":mortar_board:")
@@ -204,3 +205,6 @@ if submitted:
     
     st.success(f"Scenario '{name}' saved!")
     st.experimental_rerun()
+    
+    st.markdown("---")
+    st.subheader
