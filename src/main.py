@@ -223,4 +223,8 @@ if submitted:
         # Run the simulation
         projection_df = simulate_scenario(selected_row)
         
-        st.write(f"")
+        st.write(f"Simulation resuts for **{selected_name}**")
+        
+        st.dataframe(projection_df)
+        
+        
