@@ -285,4 +285,12 @@ else:
         
         st.line_chart(compare_df, height=350)
         
-        #
+        # Summary table
+        final_a = proj_a.iloc[-1]
+        final_b = proj_b.iloc[-1]
+        
+        st.write("Summary after final simulated year:")
+        
+        summary_df = pd.DataFrame(
+            
+        )
