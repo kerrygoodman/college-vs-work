@@ -38,14 +38,12 @@ Year‑by‑year financial simulation
     -Net savings / “net worth” over time.
 
 -Displays results in a table and line charts:
-
-Savings over time.
-
-Loan balance over time.
+    -Savings over time.
+    -Loan balance over time.
 
 Scenario comparison
 
-Select two scenarios (e.g., “College – CS Degree” vs “Work – Trade Job”).
+-Select two scenarios (e.g., “College – CS Degree” vs “Work – Trade Job”).
 
 See both savings lines on a single chart.
 
