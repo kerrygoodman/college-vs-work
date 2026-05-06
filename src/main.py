@@ -118,7 +118,8 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
         current_savings += net_cash
         
         salary.append(annual_salary)
-        expenses.append(annual_expense)
+        expenses.append(annual_expense + extra_cost)
+        loan_balance.append(max(current_loan, 0.0)))
 #---------Streamlit app---------
 
 st.set_page_config(page_title= "College vs Work Simulator", page_icon=":mortar_board:")
