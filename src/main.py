@@ -283,4 +283,6 @@ else:
             f"savings_{name_b}": proj_b["savings"].values,
         }).set_index("year")
         
-        st.line_chart(compare_df,)
+        st.line_chart(compare_df, height=350)
+        
+        #
