@@ -6,12 +6,10 @@ Scenario manager
 -Create, view, and delete named scenarios.
 
 -Two path types:
+    -college – includes years in school, tuition, and loans.
+    -work – starts working immediately, optionally with a training cost.
 
-college – includes years in school, tuition, and loans.
-
-work – starts working immediately, optionally with a training cost.
-
-All scenarios are saved to and loaded from data/scenarios.csv.
+-All scenarios are saved to and loaded from data/scenarios.csv.
 
 Customizable assumptions per scenario
 
