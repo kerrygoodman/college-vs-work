@@ -221,4 +221,6 @@ if submitted:
         selected_row = scenarios_df[scenarios_df["name"] == selected_name].iloc[0]
         
         # Run the simulation
+        projection_df = simulate_scenario(selected_row)
         
+        st.write(f"")
