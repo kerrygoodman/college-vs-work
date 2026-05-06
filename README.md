@@ -83,11 +83,11 @@ Loans
 
 Savings
 
-For each year:
-net_cash = income − expenses − loan_payments
-savings_t = savings_(t−1) + net_cash
+-For each year:
+    -net_cash = income − expenses − loan_payments
+    -savings_t = savings_(t−1) + net_cash
 
-Savings start at 0 and accumulate over the simulation period.
+-Savings start at 0 and accumulate over the simulation period.
 
 This is a simplified model designed for educational “what‑if” exploration, not professional financial advice.
 
