@@ -252,4 +252,4 @@ else:
     
     if len(scenarios_df) < 2:
         st.info("You need at least two saved scenarios to compare. Add more above.")
-        
+    
