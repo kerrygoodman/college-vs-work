@@ -260,4 +260,9 @@ else:
         default=scenarios_df["name"].tolist()[:2],  #first two by default
     )
     
-    if
+    if len(selected_names) != 2:
+        st.warning("Please select exactly two scenarios.")
+    else:
+        name_a, name_b = selected_names
+        
+        row_a = scenarios_df[scenarios]
