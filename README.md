@@ -75,11 +75,11 @@ Expenses
 
 Loans
 
-If there is a loan amount, interest rate, and term, the app computes a fixed monthly payment using a standard loan amortization formula.
+-If there is a loan amount, interest rate, and term, the app computes a fixed monthly payment using a standard loan amortization formula.
 
-Each year, it applies monthly interest and principal payments for up to 12 months (or until the loan is paid off).
+-Each year, it applies monthly interest and principal payments for up to 12 months (or until the loan is paid off).
 
-The remaining loan balance is tracked over time.
+-The remaining loan balance is tracked over time.
 
 Savings
 
