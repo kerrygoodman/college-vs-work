@@ -76,7 +76,8 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
         # To determine annual income
         if path_type == "college":
             if year < years_in_school:
-                # In school: assumes no full-time salary, but could have part-time income (not modeled here)
+                # Part-time income while in school
+                annual_salary = part_time_monthly_income * 12.0
                 annual_salary = 0.0
             else:
                 working_year_index = year - years_in_school
