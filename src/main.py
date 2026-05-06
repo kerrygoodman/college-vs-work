@@ -161,7 +161,13 @@ if len(scenarios_df) > 0:
     
     if st.button("Delete selected scenario"):
         #Drop the selected scenario by name
-        updated_df = scenarios_df[scenarios_df["name"] != scenario_to_delete].reset
+        updated_df = scenarios_df[scenarios_df["name"] != scenario_to_delete].reset_index(drop=True)
+        save_scenarios(updated_df)
+        st.success(f"Scenario '{scenario_to_delete}' deleted.")
+        st.rerun()
+        
+else:
+    st.info("No scenarios saved yet. Add one below.")
 
 st.markdown("---")
 st.subheader("Add a New Scenario")
