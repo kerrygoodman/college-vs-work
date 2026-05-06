@@ -155,7 +155,7 @@ with st.form("add_scenario_form"):
     
     path_type = st.radio(
         "Path Type",
-        options=["College", "Work"],
+        options=["college", "work"],
         index=0,
         help="Choose 'college' if this scenario includes tuition and loans, or 'work' if you start working immediately."
     )
@@ -204,7 +204,6 @@ if submitted:
     save_scenarios(scenarios_df)
     
     st.success(f"Scenario '{name}' saved!")
-    st.experimental_rerun()
     
     st.markdown("---")
     st.subheader("Run Simulation for a Scenario")
@@ -240,4 +239,5 @@ if submitted:
         
         # Summary metrics
         final_row = projection_df.iloc[-1]
-        st
+        st.metric("Savings at end of simulation", f"${final_row['savings']:,.0f}")
+        st.metric("Remaining loan balance", f"${final_row['loan_balance']:,.0f}")
