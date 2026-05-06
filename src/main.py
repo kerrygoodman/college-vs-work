@@ -78,7 +78,6 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
             if year < years_in_school:
                 # Part-time income while in school
                 annual_salary = part_time_monthly_income * 12.0
-                annual_salary = 0.0
             else:
                 working_year_index = year - years_in_school
                 annual_salary = starting_salary * (1 + salary_growth_rate) ** working_year_index
