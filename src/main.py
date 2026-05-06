@@ -92,8 +92,9 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
         tuition_this_year = tuition_per_year if (path_type == "college" and year < years_in_school) else 0.0
         
         # Training cost for work path year 0 only 
-        training_this_year = training_cost if (path_type == "work" and year == 0)
-    
+        training_this_year = training_cost if (path_type == "work" and year == 0) else 0.0
+        
+        annual_expenses = base_annual_expense + tuition_this_year + training_this_year
                 
         # Loan payments of this year
         if current_loan > 0 and monthly_payment > 0:
