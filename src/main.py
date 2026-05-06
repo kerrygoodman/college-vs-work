@@ -278,5 +278,5 @@ else:
         
         # BUilds a comparison data frame
         compare_df = pd.DataFrame({
-            
+            "year": proj
         })
