@@ -37,7 +37,7 @@ Year‑by‑year financial simulation
     -Loan balance, using a fixed monthly payment formula.
     -Net savings / “net worth” over time.
 
-Displays results in a table and line charts:
+-Displays results in a table and line charts:
 
 Savings over time.
 
