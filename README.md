@@ -196,16 +196,12 @@ The scenario is removed from the CSV and from all dropdowns.
 
 Run a simulation for one scenario
 
-In “Run Simulation for a Scenario”, select a scenario by name.
+-In “Run Simulation for a Scenario”, select a scenario by name.
 
-The app runs the projection and shows:
-
-A table of year‑by‑year values.
-
-A line chart of savings (net worth) over time.
-
+-The app runs the projection and shows:
+    -A table of year‑by‑year values.
+    -A line chart of savings (net worth) over time.
 A line chart of loan balance over time.
-
 Key metrics for final savings and remaining loan balance.
 
 Compare two scenarios
