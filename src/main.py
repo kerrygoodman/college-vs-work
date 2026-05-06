@@ -273,4 +273,5 @@ else:
         
         # Aligns to the same number of years (shortest of the two)
         max_years = min(proj_a["year"].max(), proj_b["year"].max())
-        proj_a
+        proj_a = proj_a[proj_a["year"] <= max_years]
+        proj_b = proj_b[proj_b["year"] <= max_years]
