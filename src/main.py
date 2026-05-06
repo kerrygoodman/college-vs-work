@@ -211,4 +211,6 @@ if submitted:
     
     if len(scenarios_df) == 0:
         st.info("No scenario saved yet. Add a scenario above to run a simulation.")
-        
+    else:
+        # Lets the user pick a scenario by name to simulate
+        selected_name = st.selectbox("Choose a scenario to simulate", options=scenarios_df["name"])
