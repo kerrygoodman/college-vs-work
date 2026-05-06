@@ -210,11 +210,11 @@ Key metrics for final savings and remaining loan balance.
 
 Compare two scenarios
 
-In “Compare Two Scenarios (Savings Over Time)”, select exactly two scenarios.
+-In “Compare Two Scenarios (Savings Over Time)”, select exactly two scenarios.
 
-The app draws both savings curves on the same chart.
+-The app draws both savings curves on the same chart.
 
-A summary table shows final savings and loan balance for each scenario.
+-A summary table shows final savings and loan balance for each scenario.
 
 Limitations and possible improvements
 -Assumes a fixed salary growth rate and fixed monthly expenses.
