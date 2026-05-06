@@ -106,26 +106,6 @@ Savings start at 0 and accumulate over the simulation period.
 
 This is a simplified model designed for educational “what‑if” exploration, not professional financial advice.
 
-Project structure
-Typical layout:
-
-text
-college-vs-work-streamlit/
-  .venv/                 # Python virtual environment (not committed)
-  data/
-    scenarios.csv        # Scenario data (created/updated by the app)
-  src/
-    main.py              # Streamlit app
-  .gitignore
-  README.md
-src/main.py contains:
-
-File path helpers and CSV read/write logic.
-
-simulate_scenario() which performs the year‑by‑year financial projection.
-
-Streamlit UI for managing, simulating, comparing, and deleting scenarios.
-
 
 How to use the app
 View current scenarios
