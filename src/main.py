@@ -64,7 +64,52 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
         r = loan_interest_rate / 12  #monthly rate
         n = loan_term_years * 12  #toatl months
         monthly_payment = loan_amount * (r * (1 + r) ** n) / ((1 + r) ** n -1)
-
+    else:
+        monthly_payment = 0.0
+        
+    current_loan = loan_amount
+    current_savings = 0.0
+    
+    for year in years:
+        # To determine annual income
+        if path_type == "college":
+            if year < years_in_school:
+                # In school: assumes no full-time salary, but could have part-time income (not modeled here)
+                annual_salary = 0.0
+            else:
+                working_year_index = year - years_in_school
+                annual_salary = starting_salary * (1 + salary_growth_rate) ** working_year_index
+        else:  # work path
+            working_year_index = year #starts at year 0
+            annual_salary = starting_salary * (1 + salary_growth_rate) ** working_year_index
+            
+        # Annual expense (12 months)
+        annual_expense = monthly_expenses * 12.0
+        
+        # Apply one-time training or tuition cost in year 0 only 
+        extra_cost = 0.0
+        if year == 0:
+            if path_type == "college":
+                extra_cost += years_in_school * tuition_per_year
+            else:
+                extra_cost += training_cost
+                
+        # Loan payments of this year
+        if current_loan > 0 and monthly_payment > 0:
+            # Pay for up to 12 months or until loan is gone
+            total_payment_year = 0.0
+            for _ in range(12):
+                if current_loan <= 0:
+                    break
+                interest = current_loan * (loan_interest_rate / 120)
+                principle = monthly_payment - interest
+                if principle > current_loan:
+                    principle = current_loan
+                    monthly_payment = interest + principle
+                else:
+                    monthly_payment_effective = interest + principle
+                    current_loan -= principle
+                    total_payment_year += monthly_payment_effective
 #---------Streamlit app---------
 
 st.set_page_config(page_title= "College vs Work Simulator", page_icon=":mortar_board:")
