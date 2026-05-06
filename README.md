@@ -188,11 +188,11 @@ The scenario is appended to data/scenarios.csv and appears in the table.
 
 Delete a scenario
 
-Under “Delete a Scenario”, pick a scenario by name.
+-Under “Delete a Scenario”, pick a scenario by name.
 
-Click Delete selected scenario.
+-Click Delete selected scenario.
 
-The scenario is removed from the CSV and from all dropdowns.
+-The scenario is removed from the CSV and from all dropdowns.
 
 Run a simulation for one scenario
 
