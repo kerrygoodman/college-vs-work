@@ -52,6 +52,7 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
     monthly_expenses = float(row["monthly_expenses"])
     training_cost = float(row["training_cost"])
     simulation_years = int(row["simulation_years"])
+    part_time_monthly_income = float(row.get("part_time_monthly_income", 0.0))
     
     # Basic assumptions
     years = list(range(simulation_years + 1))  # year 0 .. N
