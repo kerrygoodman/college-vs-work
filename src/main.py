@@ -294,6 +294,6 @@ else:
         summary_df = pd.DataFrame(
             {
                 "scerario": [name_a, name_b],
-                
+                "path_type": [row_a["path_type"]]
             }
         )
