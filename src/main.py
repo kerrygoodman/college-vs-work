@@ -292,5 +292,8 @@ else:
         st.write("Summary after final simulated year:")
         
         summary_df = pd.DataFrame(
-            
+            {
+                "scerario": [name_a, name_b],
+                
+            }
         )
