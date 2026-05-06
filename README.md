@@ -49,12 +49,9 @@ Scenario comparison
 
 -View a summary table with:
     -Scenario name.
-
-Path type (college or work).
-
-Final savings at the end of the simulation.
-
-Final remaining loan balance.
+    -Path type (college or work).
+    -Final savings at the end of the simulation.
+    -Final remaining loan balance.
 
 How the calculations work (high‑level)
 For each scenario, the app simulates finances from year 0 up to simulation_years:
