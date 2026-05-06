@@ -37,8 +37,23 @@ def load_scenarios() -> pd.DataFrame:
 def save_scenarios(df: pd.DataFrame) -> None:
     ensure_data_dir()
     df.to_csv(SCENARIOS_CSV, index=False)
+
+def simulate_scenario(row: pd.Series) -> pd.DataFrame:
+    """Given a single scenario row, return a year-by-year projection."""
+    path_type = row["path_type"].lower()
+    years_in_school = int(row["years_in_school"])
+    tuition_per_year = float(row["tuition_per_year"])
+    loan_amount = float(row["loan_amount"])
+    loan_interest_rate = float(row["loan_interest_rate"])
+    loan_term_years = int(row["loan_term_years"])
+    starting_salary = float(row["starting_salary"])
+    salary_growth_rate = float(row["salary_growth_rate"])
+    monthly_expenses = float(row["monthly_expenses"])
+    training_cost = float(row["training_cost"])
+    simulation_years = int(row["simulation_years"])
     
-    
+    # Basic assumptions
+
 #---------Streamlit app---------
 
 st.set_page_config(page_title= "College vs Work Simulator", page_icon=":mortar_board:")
