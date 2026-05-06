@@ -201,8 +201,8 @@ Run a simulation for one scenario
 -The app runs the projection and shows:
     -A table of year‑by‑year values.
     -A line chart of savings (net worth) over time.
-A line chart of loan balance over time.
-Key metrics for final savings and remaining loan balance.
+    -A line chart of loan balance over time.
+    -Key metrics for final savings and remaining loan balance.
 
 Compare two scenarios
 
