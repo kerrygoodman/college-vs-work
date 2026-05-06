@@ -204,6 +204,7 @@ if submitted:
     save_scenarios(scenarios_df)
     
     st.success(f"Scenario '{name}' saved!")
+    st.rerun()
     
     st.markdown("---")
     st.subheader("Run Simulation for a Scenario")
