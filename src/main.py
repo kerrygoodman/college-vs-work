@@ -206,39 +206,39 @@ if submitted:
     st.success(f"Scenario '{name}' saved!")
     st.rerun()
     
-    st.markdown("---")
-    st.subheader("Run Simulation for a Scenario")
+st.markdown("---")
+st.subheader("Run Simulation for a Scenario")
+
+if len(scenarios_df) == 0:
+    st.info("No scenario saved yet. Add a scenario above to run a simulation.")
+else:
+    # Lets the user pick a scenario by name to simulate
+    selected_name = st.selectbox("Choose a scenario to simulate", 
+                                    options=scenarios_df["name"].tolist(),
+    )
     
-    if len(scenarios_df) == 0:
-        st.info("No scenario saved yet. Add a scenario above to run a simulation.")
-    else:
-        # Lets the user pick a scenario by name to simulate
-        selected_name = st.selectbox("Choose a scenario to simulate", 
-                                     options=scenarios_df["name"].tolist(),
-        )
-        
-        # Find the selected scenario row
-        selected_row = scenarios_df[scenarios_df["name"] == selected_name].iloc[0]
-        
-        # Run the simulation
-        projection_df = simulate_scenario(selected_row)
-        
-        st.write(f"Simulation resuts for **{selected_name}**")
-        
-        st.dataframe(projection_df)
-        
-        # Charts
-        st.line_chart(
-            projection_df.set_index("year")[["savings"]],
-            height=300,
-        )
-        
-        st.line_chart(
-            projection_df.set_index("year")[["loan_balance"]],
-            height=300,
-        )
-        
-        # Summary metrics
-        final_row = projection_df.iloc[-1]
-        st.metric("Savings at end of simulation", f"${final_row['savings']:,.0f}")
-        st.metric("Remaining loan balance", f"${final_row['loan_balance']:,.0f}")
+    # Find the selected scenario row
+    selected_row = scenarios_df[scenarios_df["name"] == selected_name].iloc[0]
+    
+    # Run the simulation
+    projection_df = simulate_scenario(selected_row)
+    
+    st.write(f"Simulation resuts for **{selected_name}**")
+    
+    st.dataframe(projection_df)
+    
+    # Charts
+    st.line_chart(
+        projection_df.set_index("year")[["savings"]],
+        height=300,
+    )
+    
+    st.line_chart(
+        projection_df.set_index("year")[["loan_balance"]],
+        height=300,
+    )
+    
+    # Summary metrics
+    final_row = projection_df.iloc[-1]
+    st.metric("Savings at end of simulation", f"${final_row['savings']:,.0f}")
+    st.metric("Remaining loan balance", f"${final_row['loan_balance']:,.0f}")
