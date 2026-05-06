@@ -126,48 +126,6 @@ simulate_scenario() which performs the year‑by‑year financial projection.
 
 Streamlit UI for managing, simulating, comparing, and deleting scenarios.
 
-Getting started
-Prerequisites
-Python 3.10+ installed and on your PATH.
-
-Git (if you’re using GitHub).
-
-Recommended: VS Code with the Python and Git extensions.
-
-1. Clone the repo (or open the project folder)
-bash
-git clone https://github.com/<your-username>/college-vs-work-streamlit.git
-cd college-vs-work-streamlit
-Or, if you already have the folder locally, just cd into it.
-
-2. Create and activate a virtual environment
-On Windows (Command Prompt):
-
-bash
-python -m venv .venv
-.venv\Scripts\activate.bat
-You should see (.venv) at the beginning of your terminal prompt.
-
-3. Install dependencies
-With the virtual environment activated:
-
-bash
-pip install streamlit pandas
-4. Run the app
-From the project root:
-
-bash
-cd src
-streamlit run main.py
-Or from the root using the relative path:
-
-bash
-streamlit run src\main.py
-Then open your browser to:
-
-text
-http://localhost:8501
-if it doesn’t open automatically.
 
 How to use the app
 View current scenarios
