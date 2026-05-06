@@ -277,3 +277,4 @@ else:
         proj_b = proj_b[proj_b["year"] <= max_years]
         
         # BUilds a comparison data frame
+        compare_df = pd.DataFrame
