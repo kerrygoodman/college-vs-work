@@ -281,4 +281,4 @@ else:
             "year": proj_a["year"],
             f"savings_{name_a}": proj_a["savings"].values,
             f"savings_{name-b}": proj_b["savings"].values,
-        }).set
+        }).set_index("year")
