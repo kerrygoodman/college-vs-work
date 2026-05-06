@@ -246,3 +246,10 @@ else:
     final_row = projection_df.iloc[-1]
     st.metric("Savings at end of simulation", f"${final_row['savings']:,.0f}")
     st.metric("Remaining loan balance", f"${final_row['loan_balance']:,.0f}")
+    
+    st.markdown("---")
+    st.subheader("Compare Two Scenarios (Savings Over Time)")
+    
+    if len(scenarios_df) < 2:
+        st.info("You need at least two saved scenarios to compare. Add more above.")
+        
