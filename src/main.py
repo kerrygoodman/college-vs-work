@@ -149,6 +149,10 @@ st.dataframe(scenarios_df)
 
 st.write("Number of scenarios:", len(scenarios_df))
 
+#--- Delete scenario controls ---
+if len(scenarios_df) > 0:
+    st.markdown('### Delete a Scenario')
+
 st.markdown("---")
 st.subheader("Add a New Scenario")
 
