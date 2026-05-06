@@ -73,7 +73,7 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
     current_savings = 0.0
     
     for year in years:
-        # To determine annual income
+        # ---Income ---
         if path_type == "college":
             if year < years_in_school:
                 # Part-time income while in school
