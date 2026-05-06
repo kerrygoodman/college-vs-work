@@ -67,11 +67,11 @@ Income
 
 Expenses
 
-Base expenses are monthly_expenses × 12 each year.
+-Base expenses are monthly_expenses × 12 each year.
 
-College path adds tuition_per_year for each school year.
+-College path adds tuition_per_year for each school year.
 
-Work path can add a one‑time training_cost in year 0.
+-Work path can add a one‑time training_cost in year 0.
 
 Loans
 
