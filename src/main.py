@@ -85,9 +85,11 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
             working_year_index = year #starts at year 0
             annual_salary = starting_salary * (1 + salary_growth_rate) ** working_year_index
             
-        # Annual expense (12 months)
-        annual_expense = monthly_expenses * 12.0
+        # ---Expenses ---
+        base_annual_expense = monthly_expenses * 12.0
         
+        # Tuition spread across school years only
+        tuition_this_year = tuition_
         # Apply one-time training or tuition cost in year 0 only 
         extra_cost = 0.0
         if year == 0:
