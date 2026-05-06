@@ -58,9 +58,8 @@ For each scenario, the app simulates finances from year 0 up to simulation_years
 
 Income
 
-College path:
-
-During school years: income is part_time_monthly_income × 12.
+-College path:
+    -During school years: income is part_time_monthly_income × 12.
 
 After graduation: salary starts at starting_salary and grows annually by salary_growth_rate.
 
