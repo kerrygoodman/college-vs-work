@@ -271,4 +271,5 @@ else:
         proj_a = simulate_scenario(row_a)
         proj_b = simulate_scenario(row_b)
         
-        
+        # Aligns to the same number of years (shortest of the two)
+        max_years = min
