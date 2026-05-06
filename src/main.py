@@ -115,8 +115,8 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
         else:
             total_payment_year = 0.0
             
-        # Net cash and savings
-        net_cash = annual_salary - annual_expense - extra_cost - total_payment_year
+        # ---Net cash and savings ---
+        net_cash = annual_salary - annual_expenses - total_payment_year
         current_savings += net_cash
         
         salary.append(annual_salary)
