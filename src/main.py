@@ -265,4 +265,4 @@ else:
     else:
         name_a, name_b = selected_names
         
-        row_a = scenarios_df[scenarios]
+        row_a = scenarios_df[scenarios_df["name"]]
