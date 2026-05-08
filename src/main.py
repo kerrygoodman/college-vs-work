@@ -147,6 +147,14 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
 
 st.set_page_config(page_title= "College vs Work Simulator", page_icon=":mortar_board:")
 
+st.markdown(
+    """
+    <style>
+    /* Page background gradient */
+    .stApp {
+        background: linear-gradient(135deg, )}"""
+)
+
 st.title("College vs Work - Financial Planning Simulator")
 st.write(
     "Use this app to build college and work scenarios, simulate you finances over time,"
