@@ -45,7 +45,8 @@ def load_scenarios() -> pd.DataFrame:
             "part_time_monthly_income",
         ]
         return pd.DataFrame(columns=cols)
-    
+
+st.subheader("Add a New Scenario")    
 def save_scenarios(df: pd.DataFrame) -> None:
     ensure_data_dir()
     df.to_csv(SCENARIOS_CSV, index=False)
