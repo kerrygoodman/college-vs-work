@@ -239,7 +239,8 @@ with st.form("add_scenario_form"):
     
     years_in_school = st.number_input("Years in school (only for college path)", min_value=0, max_value=10, value=4)
     tuition_per_year = st.number_input("Tuition per year (only for college path)", min_value=0, value=20000, step=1000)
-    
+    part_time_monthly_income = st.number_input("Part-time monthly income during college (for college path)",
+                                               min_value=0, value=800, step=100)    
     loan_amount = st.number_input("Total loan amount", min_value=0, value=30000, step=1000)
     loan_interest_rate = st.number_input("Loan interest rate (e.g., 0.05 for 5%)", min_value=0.0, max_value=1.0, value=0.05, step=0.01)
     loan_term_years = st.number_input("Loan term in years", min_value=0, max_value=40, value=10)
@@ -249,8 +250,7 @@ with st.form("add_scenario_form"):
     
     monthly_expenses = st.number_input("Monthly living expenses", min_value=0, value=1500, step=100)
     training_cost = st.number_input("Cost of any additional training or certifications", min_value=0, value=0, step=500)
-    part_time_monthly_income = st.number_input("Part-time monthly income during college (for college path)",
-                                               min_value=0, value=800, step=100)
+
     simulation_years = st.number_input("Years to simulate", min_value=1, max_value=50, value=15)
     
     submitted = st.form_submit_button("Save scenario")
