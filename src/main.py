@@ -116,7 +116,7 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
                 principle = monthly_payment - interest
                 if principle > current_loan:
                     principle = current_loan
-                    monthly_payment = interest + principle
+                    monthly_payment_effective = interest + principle
                 else:
                     monthly_payment_effective = monthly_payment
                     current_loan -= principle
