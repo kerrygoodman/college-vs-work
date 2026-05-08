@@ -201,23 +201,6 @@ st.markdown('<div class="section-title">Saved scenarios</div>',
 st.dataframe(scenarios_df, use_container_width=True)
 st.write("Number of scenarios:", len(scenarios_df))
 
-
-#--- Add scenario card ---
-st.markdown('<div class="scenario-card">', unsafe_allow_html=True)
-st.markdown('<div class="section-title">Add a new scenario</div>',
-            unsafe_allow_html=True)
-
-with st.form("add_scenario_form"):
-    # existing form fields...
-
-#Loading Scenarios
-    scenarios_df = load_scenarios()
-
-st.subheader("Saved Scenarios")
-st.dataframe(scenarios_df)
-
-st.write("Number of scenarios:", len(scenarios_df))
-
 #--- Delete scenario controls ---
 if len(scenarios_df) > 0:
     st.markdown('### Delete a Scenario')
@@ -240,6 +223,24 @@ else:
 
 st.markdown("---")
 st.markdown('</div>', unsafe_allow_html=True)
+
+#--- Add scenario card ---
+st.markdown('<div class="scenario-card">', unsafe_allow_html=True)
+st.markdown('<div class="section-title">Add a new scenario</div>',
+            unsafe_allow_html=True)
+
+with st.form("add_scenario_form"):
+    # existing form fields...
+
+#Loading Scenarios
+    scenarios_df = load_scenarios()
+
+st.subheader("Saved Scenarios")
+st.dataframe(scenarios_df)
+
+st.write("Number of scenarios:", len(scenarios_df))
+
+
 
 #--- Single scenario simulation card ---
 st.markdown('div class="scenario-card">', unsafe_allow_html=True)
