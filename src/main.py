@@ -248,8 +248,11 @@ with st.form("add_scenario_form"):
                                   min_value=0, value=30000, step=1000
     )
     loan_interest_rate = st.number_input("Loan interest rate (e.g., 0.05 for 5%)",
-                                         min_value=0.0000, max_value=1.0000, value=0.0005, step=0.0001)
-    loan_term_years = st.number_input("Loan term in years", min_value=0, max_value=40, value=10)
+                                         min_value=0.0000, max_value=1.0000, value=0.0005, step=0.0001
+    )
+    loan_term_years = st.number_input("Loan term in years",
+                                      min_value=0, max_value=40, value=10
+    )
     part_time_monthly_income = st.number_input("Part-time monthly income during college (for college path)",
                                                min_value=0, value=800, step=100)  
        
