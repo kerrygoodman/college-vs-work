@@ -147,7 +147,7 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
 
 st.set_page_config(page_title= "College vs Work Simulator", page_icon=":mortar_board:")
 
-st.markdown("---")
+# Custom CSS
 st.markdown(
     """
     <style>
