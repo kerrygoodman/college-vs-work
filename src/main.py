@@ -266,13 +266,14 @@ else:
     ax1.plot(projection_df["year"], projection_df["savings"], color=COLOR_SAVINGS, label="Savings")
     ax1.set_xlabel("Year")
     ax1.set_ylabel("Amount ($)")
+    ax1.grid(True, alpha=0.3)
+    ax1.legend()
+    st.pyplot(fig1)
     
     
     #---Loan Balance Chart---
-    st.line_chart(
-        projection_df.set_index("year")[["loan_balance"]],
-        height=300,
-    )
+    st.markdown("#### Loan balance over time")
+    fig2, ax2
     
     # Summary metrics
     final_row = projection_df.iloc[-1]
