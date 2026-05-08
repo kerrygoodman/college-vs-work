@@ -7,6 +7,8 @@ import matplotlib.pylot as plt
 # Simple color palette
 
 COLOR_SAVINGS = "#1f77b4"  # Blue
+COLOR_LOAN = "#d62728"     # Red
+COLOR_SCENARIO_A = "#1f77b4"     # Blue
 
 
 #---------Paths & helpers
