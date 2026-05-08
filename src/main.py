@@ -148,7 +148,10 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
 st.set_page_config(page_title= "College vs Work Simulator", page_icon=":mortar_board:")
 
 st.title("College vs Work - Financial Planning Simulator")
-st.write("Use this app to build college and work scenarios, simulate you finances over time,")
+st.write(
+    "Use this app to build college and work scenarios, simulate you finances over time,"
+         "and compare which path fits your situation better."
+)
 
 #Loading Scenarios
 scenarios_df = load_scenarios()
