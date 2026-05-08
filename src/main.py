@@ -354,7 +354,6 @@ else:
     st.metric("Savings at end of simulation", f"${final_row['savings']:,.0f}")
     st.metric("Remaining loan balance", f"${final_row['loan_balance']:,.0f}")
     
-st.markdown("---")
 st.markdown('</div>', unsafe_allow_html=True)
 
 if len(scenarios_df) < 2:
