@@ -190,7 +190,7 @@ st.write(
     "and visually compare which path fits your situation better."
 )
 
-
+# Loads scenarios ONCE
 scenarios_df = load_scenarios()
 
 #--- Scenario overview card ---
