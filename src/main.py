@@ -220,7 +220,6 @@ if len(scenarios_df) > 0:
 else:
     st.info("No scenarios saved yet. Add one below.")
 
-st.markdown("---")
 st.markdown('</div>', unsafe_allow_html=True)
 
 #--- Add scenario card ---
