@@ -185,8 +185,8 @@ st.markdown(
 
 st.title("College vs Work - Financial Planning Simulator")
 st.write(
-    "Use this app to build college and work scenarios, simulate you finances over time,"
-         "and compare which path fits your situation better."
+    "Build college and work scenarios, simulate your finances over time,"
+         "and visuallycompare which path fits your situation better."
 )
 
 #Loading Scenarios
