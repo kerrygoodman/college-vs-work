@@ -165,7 +165,12 @@ st.markdown(
         margin-bottom: 1.5rem;
     }
     
-    /* Section titles */"""
+    /* Section titles */
+    .section-title {
+        font-size: 1.3rem;
+        font-wieght: 600;
+        margin-bottom: 0.5rem;
+        color: #e5e7eb;}"""
 )
 
 st.title("College vs Work - Financial Planning Simulator")
