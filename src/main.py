@@ -413,7 +413,9 @@ else:
                 "scerario": [name_a, name_b],
                 "path_type": [row_a["path_type"], row_b["path_type"]],
                 "final_savings": [final_a["savings"], final_b["savings"]],
-                "final_loan_balance": [final_a["loan_balance"], final_b["loan_balance"]],
+                "final_loan_balance": [
+                    final_a["loan_balance"],
+                    final_b["loan_balance"]],
             }
         )
         st.dataframe(summary_df)
