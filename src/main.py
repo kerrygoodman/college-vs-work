@@ -228,25 +228,6 @@ st.markdown('<div class="section-title">Add a new scenario</div>',
             unsafe_allow_html=True)
 
 with st.form("add_scenario_form"):
-    # existing form fields...
-
-#Loading Scenarios
-    scenarios_df = load_scenarios()
-
-st.subheader("Saved Scenarios")
-st.dataframe(scenarios_df)
-
-st.write("Number of scenarios:", len(scenarios_df))
-
-
-
-#--- Single scenario simulation card ---
-st.markdown('div class="scenario-card">', unsafe_allow_html=True)
-st.markdown('<div class="section-title">Analyze a single scenario</div>', 
-            unsafe_allow_html=True)
-
-
-with st.form("add_scenario_form"):
     name= st.text_input("Scenario name", value="My Scenario")
     
     path_type = st.radio(
@@ -305,6 +286,25 @@ if submitted:
     st.rerun()
     
 st.markdown('<div class="scenario-card">', unsafe_allow_html=True)
+
+#--- Single scenario simulation card ---
+st.markdown('div class="scenario-card">', unsafe_allow_html=True)
+st.markdown('<div class="section-title">Analyze a single scenario</div>', 
+            unsafe_allow_html=True)
+#Loading Scenarios
+    scenarios_df = load_scenarios()
+
+st.subheader("Saved Scenarios")
+st.dataframe(scenarios_df)
+
+st.write("Number of scenarios:", len(scenarios_df))
+
+
+
+
+
+
+
 
 #--- Comparison card ---
 st.markdown('div class="scenario-card">', unsafe_allow_html=True)
