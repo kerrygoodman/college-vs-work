@@ -11,6 +11,7 @@ COLOR_LOAN = "#d62728"     # Red
 COLOR_SCENARIO_A = "#1f77b4"     # Blue
 COLOR_SCENARIO_B = "#ff7f0e"     # Orange
 
+
 #---------Paths & helpers
 
 BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
