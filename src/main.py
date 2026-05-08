@@ -147,7 +147,7 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
 
 st.set_page_config(page_title= "College vs Work Simulator", page_icon=":mortar_board:")
 
-st.title("College vs Work - Scenario Manager (Starter)")
+st.title("College vs Work - Financial Planning Simulator")
 st.write("This is the starter view. We are just loading and displaying scenarios for now.")
 
 #Loading Scenarios
