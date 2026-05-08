@@ -326,7 +326,7 @@ else:
         st.markdown("#### Savings comparison")
         
         fig3, ax3 = plt.subplots()
-        ax3.plot(comp)
+        ax3.plot(compare_df.index, compare_df.iloc[:, 0], )
         
         # Summary table
         final_a = proj_a.iloc[-1]
