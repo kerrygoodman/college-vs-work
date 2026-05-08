@@ -270,11 +270,12 @@ with st.form("add_scenario_form"):
                                          min_value=0.0000,
                                          max_value=1.0000,
                                          value=0.0500,    # 5% default
-                                         step=0.0001      # 0.01% increments 
+                                         step=0.0001,      # 0.01% increments 
     )
     loan_term_years = st.number_input("Loan term in years",
                                       min_value=0,
-                                      max_value=40, value=10
+                                      max_value=40,
+                                      value=10,
     )
     
        
