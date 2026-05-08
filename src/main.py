@@ -264,7 +264,8 @@ else:
     st.markdown("#### Savings over time")
     fig1, ax1 = plt.subplots()
     ax1.plot(projection_df["year"], projection_df["savings"], color=COLOR_SAVINGS, label="Savings")
-
+    ax1.set_xlabel("Year")
+    ax1.set_ylabel("Amount ($)")
     
     
     #---Loan Balance Chart---
