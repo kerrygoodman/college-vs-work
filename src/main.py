@@ -409,7 +409,7 @@ else:
         
         summary_df = pd.DataFrame(
             {
-                "scerario": [name_a, name_b],
+                "scenario": [name_a, name_b],
                 "path_type": [row_a["path_type"], row_b["path_type"]],
                 "final_savings": [final_a["savings"], final_b["savings"]],
                 "final_loan_balance": [
