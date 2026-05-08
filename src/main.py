@@ -391,7 +391,10 @@ else:
             compare_df.index,
             compare_df.iloc[:, 0],
             color=COLOR_SCENARIO_A, label=name_a)
-        ax3.plot(compare_df.index, compare_df.iloc[:, 1], color=COLOR_SCENARIO_B, label=name_b)
+        ax3.plot(
+            compare_df.index,
+            compare_df.iloc[:, 1],
+            color=COLOR_SCENARIO_B, label=name_b)
         
         ax3.set_xlabel("Year")
         ax3.set_ylabel("Savings ($)")
