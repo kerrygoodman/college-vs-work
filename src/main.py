@@ -245,7 +245,9 @@ with st.form("add_scenario_form"):
                                           value=4,
         )
         tuition_per_year = st.number_input("Tuition per year (only for college path)",
-                                           min_value=0, value=20000, step=1000
+                                           min_value=0,
+                                           value=20000,
+                                           step=1000,
         )
    
     loan_amount = st.number_input("Total loan amount",
