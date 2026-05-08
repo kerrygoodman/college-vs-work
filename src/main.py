@@ -191,7 +191,8 @@ st.write(
 
 #--- Scenario overview card ---
 st.markdown('div class="scenario-card">', unsafe_allow_html=True)
-st.markdown('<div class="section-title">Saved')
+st.markdown('<div class="section-title">Saved scenarios</div>',
+            )
 
 #Loading Scenarios
 scenarios_df = load_scenarios()
