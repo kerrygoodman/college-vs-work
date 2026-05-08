@@ -295,12 +295,13 @@ if submitted:
         "loan_amount": loan_amount,
         "loan_interest_rate": loan_interest_rate,
         "loan_term_years": loan_term_years,
+        "part_time_monthly_income": part_time_monthly_income,
         "starting_salary": starting_salary,
         "salary_growth_rate": salary_growth_rate,
         "monthly_expenses": monthly_expenses,
         "training_cost": training_cost,
         "simulation_years": simulation_years,
-        "part_time_monthly_income": part_time_monthly_income,
+
     }
     
     #Append the new row to the data frame
