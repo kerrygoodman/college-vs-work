@@ -217,7 +217,6 @@ if len(scenarios_df) > 0:
         save_scenarios(updated_df)
         st.success(f"Scenario '{scenario_to_delete}' deleted.")
         st.rerun()
-        
 else:
     st.info("No scenarios saved yet. Add one below.")
 
