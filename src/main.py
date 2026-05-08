@@ -256,6 +256,11 @@ with st.form("add_scenario_form"):
         )
     else:
         #---- Work only fields ----
+        years_in_school = 0
+        tuition_per_year = 0
+        pert_time_monthly_income = 0
+        
+    #---- Fields common to both fields ----
     loan_amount = st.number_input("Total loan amount",
                                   min_value=0,
                                   value=30000, step=1000
