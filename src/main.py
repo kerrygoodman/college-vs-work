@@ -277,7 +277,10 @@ else:
     ax2.plot(projection_df["year"], projection_df["loan_balance"], color=COLOR_LOAN, label="Loan balance")
     ax2.set_xlabel("Year")
     ax2.set_ylabel("Amount ($)")
-    ax2.
+    ax2.grid(True, alpha=0.3)
+    ax2.legend()
+    st.pyplot(fig2)
+    
     
     # Summary metrics
     final_row = projection_df.iloc[-1]
