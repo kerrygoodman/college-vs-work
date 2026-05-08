@@ -253,7 +253,9 @@ with st.form("add_scenario_form"):
                                                min_value=0,
                                                value=800,
                                                step=100,
-        )  
+        )
+    else:
+        #---- Work only fields ----
     loan_amount = st.number_input("Total loan amount",
                                   min_value=0,
                                   value=30000, step=1000
