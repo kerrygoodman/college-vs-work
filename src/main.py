@@ -198,7 +198,8 @@ st.dataframe(scenarios_df, use_container_width=True)
 st.write("Number of scenarios:", len(scenarios_df))
 st.markdown('</div>', unsafe_allow_html=True)
 
-#--- Add 
+#--- Add scenario card ---
+st.markdown('<div class"scenario-card">', unsafe_allow_html=True)
 
 #Loading Scenarios
 scenarios_df = load_scenarios()
