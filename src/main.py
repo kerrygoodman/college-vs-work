@@ -415,7 +415,8 @@ else:
                 "final_savings": [final_a["savings"], final_b["savings"]],
                 "final_loan_balance": [
                     final_a["loan_balance"],
-                    final_b["loan_balance"]],
+                    final_b["loan_balance"],
+                    ],
             }
         )
         st.dataframe(summary_df)
