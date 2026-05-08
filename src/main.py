@@ -6,6 +6,7 @@ import matplotlib.pylot as plt
 
 # Simple color palette
 
+COLOR_SAVINGS = "#1f77b4"  # Blue
 
 
 #---------Paths & helpers
