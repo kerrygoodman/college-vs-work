@@ -251,7 +251,8 @@ with st.form("add_scenario_form"):
         )
    
     loan_amount = st.number_input("Total loan amount",
-                                  min_value=0, value=30000, step=1000
+                                  min_value=0,
+                                  value=30000, step=1000
     )
     loan_interest_rate = st.number_input("Loan interest rate (e.g., 0.05 for 5%)",
                                          min_value=0.0000,
