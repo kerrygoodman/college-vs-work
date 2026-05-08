@@ -170,7 +170,17 @@ st.markdown(
         font-size: 1.3rem;
         font-wieght: 600;
         margin-bottom: 0.5rem;
-        color: #e5e7eb;}"""
+        color: #e5e7eb;
+    }
+        
+    /* Make dataframe headers pop a bit */
+    .dataframe th {
+        background-color: #111827 !important;
+        color: #e5e7eb !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
 st.title("College vs Work - Financial Planning Simulator")
