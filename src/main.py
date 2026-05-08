@@ -21,7 +21,8 @@ SCENARIOS_CSV = DATA_DIR / "scenarios.csv"
 def ensure_data_dir():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-st.subheader("")
+st.subheader("Saved Scenarios")
+st.dataframe(scenarios_df)
 def load_scenarios() -> pd.DataFrame:
     ensure_data_dir()
     if SCENARIOS_CSV.exists():
