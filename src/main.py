@@ -152,7 +152,10 @@ st.markdown(
     <style>
     /* Page background gradient */
     .stApp {
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #020617 100%);}"""
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #020617 100%);
+        color: #f9fafb;
+    }
+    """
 )
 
 st.title("College vs Work - Financial Planning Simulator")
