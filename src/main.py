@@ -155,7 +155,14 @@ st.markdown(
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #020617 100%);
         color: #f9fafb;
     }
-    """
+    
+    /* Card-like sections */
+    .scenario-card {
+        background-color: rgba(15, 23, 42, 0.85);
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        }"""
 )
 
 st.title("College vs Work - Financial Planning Simulator")
