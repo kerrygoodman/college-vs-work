@@ -237,6 +237,7 @@ with st.form("add_scenario_form"):
         help="Choose 'college' if this scenario includes tuition and loans, or 'work' if you start working immediately."
     )
     
+    #---- College-only fields ----
     years_in_school = st.number_input("Years in school (only for college path)",
                                       min_value=0, max_value=10, value=4
     )
