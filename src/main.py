@@ -260,12 +260,14 @@ else:
     
     st.dataframe(projection_df)
     
-    # Charts
+    #---Savings Chart---
     st.line_chart(
         projection_df.set_index("year")[["savings"]],
         height=300,
     )
     
+    
+    #---Loan Balance Chart---
     st.line_chart(
         projection_df.set_index("year")[["loan_balance"]],
         height=300,
