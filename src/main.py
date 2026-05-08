@@ -196,7 +196,9 @@ st.markdown('<div class="section-title">Saved scenarios</div>',
 
 st.dataframe(scenarios_df, use_container_width=True)
 st.write("Number of scenarios:", len(scenarios_df))
-#delete
+st.markdown('</div>', unsafe_allow_html=True)
+
+#--- Add 
 
 #Loading Scenarios
 scenarios_df = load_scenarios()
