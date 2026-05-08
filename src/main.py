@@ -162,7 +162,10 @@ st.markdown(
         padding: 1.5rem;
         border-radius: 0.75rem;
         border: 1px solid rgba(148, 163, 184, 0.35);
-        }"""
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Section titles */"""
 )
 
 st.title("College vs Work - Financial Planning Simulator")
