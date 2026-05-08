@@ -264,7 +264,10 @@ with st.form("add_scenario_form"):
                                       min_value=0, value=60000, step=1000
     )
     salary_growth_rate = st.number_input("Annual salary growth rate (e.g., 0.03 for 3%)",
-                                         min_value=0.0000, max_value=1.0000, value=0.0003, step=0.0001
+                                         min_value=0.0000,
+                                         max_value=1.0000,
+                                         value=0.0300,
+                                         step=0.0001
     )
     
     monthly_expenses = st.number_input("Monthly living expenses",
