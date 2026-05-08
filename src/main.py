@@ -147,6 +147,7 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
 
 st.set_page_config(page_title= "College vs Work Simulator", page_icon=":mortar_board:")
 
+st.markdown("---")
 st.markdown(
     """
     <style>
@@ -199,7 +200,12 @@ st.write("Number of scenarios:", len(scenarios_df))
 st.markdown('</div>', unsafe_allow_html=True)
 
 #--- Add scenario card ---
-st.markdown('<div class"scenario-card">', unsafe_allow_html=True)
+st.markdown('<div class="scenario-card">', unsafe_allow_html=True)
+st.markdown('<div class="section-title">Add a new scenario</div>',
+            unsafe_allow_html=True)
+
+with st.form("add_scenario_form"):
+    # existing form fields...
 
 #Loading Scenarios
 scenarios_df = load_scenarios()
@@ -230,7 +236,11 @@ else:
     st.info("No scenarios saved yet. Add one below.")
 
 st.markdown("---")
-st.subheader("Add a New Scenario")
+st.markdown('</div>', unsafe_allow_html=True)
+
+#--- Single scenario simulation card ---
+st.markdown('div class="scenario-card">', unsafe_allow_html=True)
+st.markdown('<div class="section-title">Analyze')
 
 with st.form("add_scenario_form"):
     name= st.text_input("Scenario name", value="My Scenario")
