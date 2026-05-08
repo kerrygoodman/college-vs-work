@@ -303,7 +303,10 @@ if submitted:
     st.rerun()
     
 st.markdown("---")
-st.subheader("Run Simulation for a Scenario")
+st.markdown('<div class="scenario-card">', unsafe_allow_html=True)
+
+#--- Comparison card ---
+st.markdown
 
 if len(scenarios_df) == 0:
     st.info("No scenario saved yet. Add a scenario above to run a simulation.")
