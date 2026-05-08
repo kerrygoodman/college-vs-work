@@ -420,3 +420,5 @@ else:
             }
         )
         st.dataframe(summary_df)
+        
+st.markdown("</div>", unsafe_allow_html=True)
