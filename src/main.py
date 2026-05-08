@@ -293,7 +293,8 @@ with st.form("add_scenario_form"):
     
     monthly_expenses = st.number_input("Monthly living expenses",
                                        min_value=0,
-                                       value=1500, step=100
+                                       value=1500,
+                                       step=100,
     )
     training_cost = st.number_input("Cost of any additional training or certifications",
                                     min_value=0, value=0, step=500
