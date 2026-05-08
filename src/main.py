@@ -4,6 +4,9 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pylot as plt
 
+# Simple color palette
+
+
 
 #---------Paths & helpers
 
