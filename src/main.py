@@ -331,7 +331,7 @@ else:
         
         ax3.set_xlabel("Year")
         ax3.set_ylabel("Savings ($)")
-        ax3.grid(True, alpah=0.3)
+        ax3.grid(True, alpha=0.3)
         ax3.legend(title="Scenario")
         st.pyplot(fig3)
         
