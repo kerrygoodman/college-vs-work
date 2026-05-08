@@ -258,12 +258,13 @@ with st.form("add_scenario_form"):
         #---- Work only fields ----
         years_in_school = 0
         tuition_per_year = 0
-        pert_time_monthly_income = 0
+        part_time_monthly_income = 0
         
     #---- Fields common to both fields ----
     loan_amount = st.number_input("Total loan amount",
                                   min_value=0,
-                                  value=30000, step=1000
+                                  value=30000,
+                                  step=1000,
     )
     loan_interest_rate = st.number_input("Loan interest rate (e.g., 0.05 for 5%)",
                                          min_value=0.0000,
