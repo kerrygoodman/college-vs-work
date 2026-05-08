@@ -304,7 +304,9 @@ with st.form("add_scenario_form"):
 
     simulation_years = st.number_input("Years to simulate",
                                        min_value=1,
-                                       max_value=50, value=15)
+                                       max_value=50,
+                                       value=15,
+    )
     
     submitted = st.form_submit_button("Save scenario")
     
