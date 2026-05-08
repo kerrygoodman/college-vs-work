@@ -292,23 +292,6 @@ st.markdown('div class="scenario-card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Analyze a single scenario</div>', 
             unsafe_allow_html=True)
 
-st.subheader("Saved Scenarios")
-st.dataframe(scenarios_df)
-
-st.write("Number of scenarios:", len(scenarios_df))
-
-
-
-
-
-
-
-
-#--- Comparison card ---
-st.markdown('div class="scenario-card">', unsafe_allow_html=True)
-st.markdown('<div class="section-title">Compare two scenarios</div>',
-            unsafe_allow_html=True)
-
 if len(scenarios_df) == 0:
     st.info("No scenario saved yet. Add a scenario above to run a simulation.")
 else:
@@ -355,6 +338,20 @@ else:
     st.metric("Remaining loan balance", f"${final_row['loan_balance']:,.0f}")
     
 st.markdown('</div>', unsafe_allow_html=True)
+
+st.subheader("Saved Scenarios")
+st.dataframe(scenarios_df)
+
+st.write("Number of scenarios:", len(scenarios_df))
+
+
+
+#--- Comparison card ---
+st.markdown('div class="scenario-card">', unsafe_allow_html=True)
+st.markdown('<div class="section-title">Compare two scenarios</div>',
+            unsafe_allow_html=True)
+
+
 
 if len(scenarios_df) < 2:
     st.info("You need at least two saved scenarios to compare. Add more above.")
