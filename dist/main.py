@@ -2,6 +2,15 @@ import os
 import pathlib
 import pandas as pd
 import streamlit as st
+import matplotlib.pyplot as plt
+
+# Simple color palette
+
+COLOR_SAVINGS = "#1f77b4"  # Blue
+COLOR_LOAN = "#d62728"     # Red
+COLOR_SCENARIO_A = "#1f77b4"     # Blue
+COLOR_SCENARIO_B = "#ff7f0e"     # Orange
+
 
 #---------Paths & helpers
 
@@ -138,8 +147,11 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
 
 st.set_page_config(page_title= "College vs Work Simulator", page_icon=":mortar_board:")
 
-st.title("College vs Work - Scenario Manager (Starter)")
-st.write("This is the starter view. We are just loading and displaying scenarios for now.")
+st.title("College vs Work - Financial Planning Simulator")
+st.write(
+    "Use this app to build college and work scenarios, simulate you finances over time,"
+         "and compare which path fits your situation better."
+)
 
 #Loading Scenarios
 scenarios_df = load_scenarios()
@@ -251,16 +263,27 @@ else:
     
     st.dataframe(projection_df)
     
-    # Charts
-    st.line_chart(
-        projection_df.set_index("year")[["savings"]],
-        height=300,
-    )
+    #---Savings Chart---
+    st.markdown("#### Savings over time")
+    fig1, ax1 = plt.subplots()
+    ax1.plot(projection_df["year"], projection_df["savings"], color=COLOR_SAVINGS, label="Savings")
+    ax1.set_xlabel("Year")
+    ax1.set_ylabel("Amount ($)")
+    ax1.grid(True, alpha=0.3)
+    ax1.legend()
+    st.pyplot(fig1)
     
-    st.line_chart(
-        projection_df.set_index("year")[["loan_balance"]],
-        height=300,
-    )
+    
+    #---Loan Balance Chart---
+    st.markdown("#### Loan balance over time")
+    fig2, ax2 = plt.subplots()
+    ax2.plot(projection_df["year"], projection_df["loan_balance"], color=COLOR_LOAN, label="Loan balance")
+    ax2.set_xlabel("Year")
+    ax2.set_ylabel("Amount ($)")
+    ax2.grid(True, alpha=0.3)
+    ax2.legend()
+    st.pyplot(fig2)
+    
     
     # Summary metrics
     final_row = projection_df.iloc[-1]
@@ -303,7 +326,17 @@ else:
             f"savings_{name_b}": proj_b["savings"].values,
         }).set_index("year")
         
-        st.line_chart(compare_df, height=350)
+        st.markdown("#### Savings comparison")
+        
+        fig3, ax3 = plt.subplots()
+        ax3.plot(compare_df.index, compare_df.iloc[:, 0], color=COLOR_SCENARIO_A, label=name_a)
+        ax3.plot(compare_df.index, compare_df.iloc[:, 1], color=COLOR_SCENARIO_B, label=name_b)
+        
+        ax3.set_xlabel("Year")
+        ax3.set_ylabel("Savings ($)")
+        ax3.grid(True, alpha=0.3)
+        ax3.legend(title="Scenario")
+        st.pyplot(fig3)
         
         # Summary table
         final_a = proj_a.iloc[-1]
