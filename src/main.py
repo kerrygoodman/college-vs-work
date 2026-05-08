@@ -190,6 +190,8 @@ st.write(
          "and visuallycompare which path fits your situation better."
 )
 
+scenarios_df = load_scenarios()
+
 #--- Scenario overview card ---
 st.markdown('div class="scenario-card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Saved scenarios</div>',
@@ -208,7 +210,7 @@ with st.form("add_scenario_form"):
     # existing form fields...
 
 #Loading Scenarios
-scenarios_df = load_scenarios()
+    scenarios_df = load_scenarios()
 
 st.subheader("Saved Scenarios")
 st.dataframe(scenarios_df)
@@ -356,7 +358,7 @@ else:
     st.metric("Remaining loan balance", f"${final_row['loan_balance']:,.0f}")
     
 st.markdown("---")
-st.subheader("Compare Two Scenarios (Savings Over Time)")
+st.markdown('</div>', unsafe_allow_html=True)
 
 if len(scenarios_df) < 2:
     st.info("You need at least two saved scenarios to compare. Add more above.")
