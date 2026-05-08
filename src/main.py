@@ -187,8 +187,9 @@ st.markdown(
 st.title("College vs Work - Financial Planning Simulator")
 st.write(
     "Build college and work scenarios, simulate your finances over time,"
-         "and visuallycompare which path fits your situation better."
+    "and visually compare which path fits your situation better."
 )
+
 
 scenarios_df = load_scenarios()
 
