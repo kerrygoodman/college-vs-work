@@ -261,10 +261,9 @@ else:
     st.dataframe(projection_df)
     
     #---Savings Chart---
-    st.line_chart(
-        projection_df.set_index("year")[["savings"]],
-        height=300,
-    )
+    st.markdown("#### Savings over time")
+    fig1, ax1 = plt.subplots()
+    
     
     
     #---Loan Balance Chart---
