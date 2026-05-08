@@ -72,7 +72,7 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
     
     # Loan payment (if any)
     if loan_amount > 0 and loan_term_years > 0 and loan_interest_rate >0:
-        r = loan_interest_rate / 12  #monthly rate
+        r = loan_interest_rate / 12.0  #monthly rate
         n = loan_term_years * 12  #toatl months
         monthly_payment = loan_amount * (r * (1 + r) ** n) / ((1 + r) ** n -1)
     else:
