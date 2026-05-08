@@ -246,7 +246,7 @@ with st.form("add_scenario_form"):
     part_time_monthly_income = st.number_input("Part-time monthly income during college (for college path)",
                                                min_value=0, value=800, step=100)  
        
-    starting_salary = st.number_input("Full-time starting Salary", min_value=0, value=60000, step=1000)
+    starting_salary = st.number_input("Starting full-time Salary", min_value=0, value=60000, step=1000)
     salary_growth_rate = st.number_input("Annual Salary Growth Rate (e.g., 0.03 for 3%)", min_value=0.0, max_value=1.0, value=0.03, step=0.01)
     
     monthly_expenses = st.number_input("Monthly living expenses", min_value=0, value=1500, step=100)
