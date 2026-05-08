@@ -351,8 +351,6 @@ st.markdown('div class="scenario-card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Compare two scenarios</div>',
             unsafe_allow_html=True)
 
-
-
 if len(scenarios_df) < 2:
     st.info("You need at least two saved scenarios to compare. Add more above.")
 else:
