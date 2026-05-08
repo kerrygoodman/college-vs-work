@@ -21,8 +21,6 @@ SCENARIOS_CSV = DATA_DIR / "scenarios.csv"
 def ensure_data_dir():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-st.subheader("Saved Scenarios")
-st.dataframe(scenarios_df)
 def load_scenarios() -> pd.DataFrame:
     ensure_data_dir()
     if SCENARIOS_CSV.exists():
@@ -45,8 +43,7 @@ def load_scenarios() -> pd.DataFrame:
             "part_time_monthly_income",
         ]
         return pd.DataFrame(columns=cols)
-
-st.subheader("Add a New Scenario")    
+    
 def save_scenarios(df: pd.DataFrame) -> None:
     ensure_data_dir()
     df.to_csv(SCENARIOS_CSV, index=False)
