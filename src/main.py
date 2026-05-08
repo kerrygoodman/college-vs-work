@@ -264,7 +264,7 @@ with st.form("add_scenario_form"):
                                                min_value=0, value=800, step=100
     )  
        
-    starting_salary = st.number_input("Starting full-time Salary",
+    starting_full_time_salary = st.number_input("Starting full-time Salary",
                                       min_value=0, value=60000, step=1000
     )
     salary_growth_rate = st.number_input("Annual salary growth rate (e.g., 0.03 for 3%)",
@@ -296,7 +296,7 @@ if submitted:
         "loan_interest_rate": loan_interest_rate,
         "loan_term_years": loan_term_years,
         "part_time_monthly_income": part_time_monthly_income,
-        "starting_salary": starting_salary,
+        "starting_full_time_salary": starting_full_time_salary,
         "salary_growth_rate": salary_growth_rate,
         "monthly_expenses": monthly_expenses,
         "training_cost": training_cost,
