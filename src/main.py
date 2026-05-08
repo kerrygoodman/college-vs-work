@@ -247,7 +247,7 @@ with st.form("add_scenario_form"):
                                                min_value=0, value=800, step=100)  
        
     starting_salary = st.number_input("Starting full-time Salary", min_value=0, value=60000, step=1000)
-    salary_growth_rate = st.number_input("Annual salary growth rate (e.g., 0.03 for 3%)", min_value=0.0, max_value=1.0, value=0.03, step=0.01)
+    salary_growth_rate = st.number_input("Annual salary growth rate (e.g., 0.03 for 3%)", min_value=0.0, max_value=1.0, value=0.03, step=0.001)
     
     monthly_expenses = st.number_input("Monthly living expenses", min_value=0, value=1500, step=100)
     training_cost = st.number_input("Cost of any additional training or certifications", min_value=0, value=0, step=500)
