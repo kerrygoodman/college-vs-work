@@ -250,7 +250,9 @@ with st.form("add_scenario_form"):
                                            step=1000,
         )
         part_time_monthly_income = st.number_input("Part-time monthly income during college (for college path)",
-                                               min_value=0, value=800, step=100
+                                               min_value=0,
+                                               value=800,
+                                               step=100,
         )  
     loan_amount = st.number_input("Total loan amount",
                                   min_value=0,
