@@ -240,7 +240,9 @@ with st.form("add_scenario_form"):
     #---- College-only fields ----
     if path_type == "college": 
         years_in_school = st.number_input("Years in school (only for college path)",
-                                          min_value=0, max_value=10, value=4
+                                          min_value=0,
+                                          max_value=10,
+                                          value=4,
         )
         tuition_per_year = st.number_input("Tuition per year (only for college path)",
                                            min_value=0, value=20000, step=1000
