@@ -304,7 +304,6 @@ if submitted:
     st.success(f"Scenario '{name}' saved!")
     st.rerun()
     
-st.markdown("---")
 st.markdown('<div class="scenario-card">', unsafe_allow_html=True)
 
 #--- Comparison card ---
