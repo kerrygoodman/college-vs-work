@@ -345,7 +345,6 @@ st.dataframe(scenarios_df)
 st.write("Number of scenarios:", len(scenarios_df))
 
 
-
 #--- Comparison card ---
 st.markdown('div class="scenario-card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Compare two scenarios</div>',
