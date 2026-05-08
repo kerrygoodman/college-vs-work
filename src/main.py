@@ -308,7 +308,7 @@ st.markdown('<div class="scenario-card">', unsafe_allow_html=True)
 #--- Comparison card ---
 st.markdown('div class="scenario-card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Compare two scenarios</div>',
-            )
+            unsafe_allow_html=True)
 
 if len(scenarios_df) == 0:
     st.info("No scenario saved yet. Add a scenario above to run a simulation.")
