@@ -288,7 +288,6 @@ if submitted:
 st.markdown('<div class="scenario-card">', unsafe_allow_html=True)
 
 #--- Single scenario simulation card ---
-st.markdown('<div class="scenario-card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Analyze a single scenario</div>', 
             unsafe_allow_html=True)
 
