@@ -72,9 +72,9 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
     
     # Loan payment (if any)
     if loan_amount > 0 and loan_term_years > 0 and loan_interest_rate >0:
-        r = loan_interest_rate / 12  #monthly rate
+        r = loan_interest_rate / 12.0  #monthly rate
         n = loan_term_years * 12  #toatl months
-        monthly_payment = loan_amount * (r * (1 + r) ** n) / ((1 + r) ** n -1)
+        monthly_payment = loan_amount * (r * (1 + r) ** n) / ((1 + r) ** n - 1)
     else:
         monthly_payment = 0.0
         
@@ -116,7 +116,7 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
                 principle = monthly_payment - interest
                 if principle > current_loan:
                     principle = current_loan
-                    monthly_payment = interest + principle
+                    monthly_payment_effective = interest + principle
                 else:
                     monthly_payment_effective = monthly_payment
                     current_loan -= principle
@@ -147,18 +147,58 @@ def simulate_scenario(row: pd.Series) -> pd.DataFrame:
 
 st.set_page_config(page_title= "College vs Work Simulator", page_icon=":mortar_board:")
 
-st.title("College vs Work - Financial Planning Simulator")
-st.write(
-    "Use this app to build college and work scenarios, simulate you finances over time,"
-         "and compare which path fits your situation better."
+# Custom CSS
+st.markdown(
+    """
+    <style>
+    /* Page background gradient */
+    .stApp {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #020617 100%);
+        color: #f9fafb;
+    }
+    
+    /* Card-like sections */
+    .scenario-card {
+        background-color: rgba(15, 23, 42, 0.85);
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 1.3rem;
+        font-wieght: 600;
+        margin-bottom: 0.5rem;
+        color: #e5e7eb;
+    }
+        
+    /* Make dataframe headers pop a bit */
+    .dataframe th {
+        background-color: #111827 !important;
+        color: #e5e7eb !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
-#Loading Scenarios
+st.title("College vs Work - Financial Planning Simulator")
+st.write(
+    "Build college and work scenarios, simulate your finances over time,"
+    "and visually compare which path fits your situation better."
+)
+
+# Loads scenarios ONCE
 scenarios_df = load_scenarios()
 
-st.subheader("Saved Scenarios")
-st.dataframe(scenarios_df)
+#--- Scenario overview card ---
+st.markdown('<div class="scenario-card">', unsafe_allow_html=True)
+st.markdown('<div class="section-title">Saved scenarios</div>',
+            unsafe_allow_html=True)
 
+st.dataframe(scenarios_df, use_container_width=True)
 st.write("Number of scenarios:", len(scenarios_df))
 
 #--- Delete scenario controls ---
@@ -177,12 +217,15 @@ if len(scenarios_df) > 0:
         save_scenarios(updated_df)
         st.success(f"Scenario '{scenario_to_delete}' deleted.")
         st.rerun()
-        
 else:
     st.info("No scenarios saved yet. Add one below.")
 
-st.markdown("---")
-st.subheader("Add a New Scenario")
+st.markdown('</div>', unsafe_allow_html=True)
+
+#--- Add scenario card ---
+st.markdown('<div class="scenario-card">', unsafe_allow_html=True)
+st.markdown('<div class="section-title">Add a new scenario</div>',
+            unsafe_allow_html=True)
 
 with st.form("add_scenario_form"):
     name= st.text_input("Scenario name", value="My Scenario")
@@ -194,21 +237,76 @@ with st.form("add_scenario_form"):
         help="Choose 'college' if this scenario includes tuition and loans, or 'work' if you start working immediately."
     )
     
-    years_in_school = st.number_input("Years in school (only for college path)", min_value=0, max_value=10, value=4)
-    tuition_per_year = st.number_input("Tuition per year (only for college path)", min_value=0, value=20000, step=1000)
+    #---- College-only fields ----
+    if path_type == "college": 
+        years_in_school = st.number_input("Years in school (only for college path)",
+                                          min_value=0,
+                                          max_value=10,
+                                          value=4,
+        )
+        tuition_per_year = st.number_input("Tuition per year (only for college path)",
+                                           min_value=0,
+                                           value=20000,
+                                           step=1000,
+        )
+        part_time_monthly_income = st.number_input("Part-time monthly income during college (for college path)",
+                                               min_value=0,
+                                               value=800,
+                                               step=100,
+        )
+    else:
+        #---- Work only fields ----
+        years_in_school = 0
+        tuition_per_year = 0
+        part_time_monthly_income = 0
+        
+    #---- Fields common to both fields ----
+    loan_amount = st.number_input("Total loan amount",
+                                  min_value=0,
+                                  value=30000,
+                                  step=1000,
+    )
+    loan_interest_rate = st.number_input("Loan interest rate (e.g., 0.05 for 5%)",
+                                         min_value=0.0000,
+                                         max_value=1.0000,
+                                         value=0.0500,    # 5% default
+                                         step=0.0001,      # 0.01% increments 
+    )
+    loan_term_years = st.number_input("Loan term in years",
+                                      min_value=0,
+                                      max_value=40,
+                                      value=10,
+    )
     
-    loan_amount = st.number_input("Total loan amount", min_value=0, value=30000, step=1000)
-    loan_interest_rate = st.number_input("Loan interest rate (e.g., 0.05 for 5%)", min_value=0.0, max_value=1.0, value=0.05, step=0.01)
-    loan_term_years = st.number_input("Loan term in years", min_value=0, max_value=40, value=10)
+       
+    starting_full_time_salary = st.number_input("Starting full-time Salary",
+                                                min_value=0,
+                                                value=60000,
+                                                step=1000,
+    )
+    salary_growth_rate = st.number_input("Annual salary growth rate (e.g., 0.03 for 3%)",
+                                         min_value=0.0000,
+                                         max_value=1.0000,
+                                         value=0.0300,     # 3% default
+                                         step=0.0001,       # 0.01% increments
+    )
     
-    starting_salary = st.number_input("Starting Salary", min_value=0, value=60000, step=1000)
-    salary_growth_rate = st.number_input("Annual Salary Growth Rate (e.g., 0.03 for 3%)", min_value=0.0, max_value=1.0, value=0.03, step=0.01)
-    
-    monthly_expenses = st.number_input("Monthly living expenses", min_value=0, value=1500, step=100)
-    training_cost = st.number_input("Cost of any additional training or certifications", min_value=0, value=0, step=500)
-    part_time_monthly_income = st.number_input("Part-time monthly income during college (for college path)",
-                                               min_value=0, value=800, step=100)
-    simulation_years = st.number_input("Years to simulate", min_value=1, max_value=50, value=15)
+    monthly_expenses = st.number_input("Monthly living expenses",
+                                       min_value=0,
+                                       value=1500,
+                                       step=100,
+    )
+    training_cost = st.number_input("Cost of any additional training or certifications",
+                                    min_value=0,
+                                    value=0,
+                                    step=500,
+    )
+
+    simulation_years = st.number_input("Years to simulate",
+                                       min_value=1,
+                                       max_value=50,
+                                       value=15,
+    )
     
     submitted = st.form_submit_button("Save scenario")
     
@@ -222,12 +320,13 @@ if submitted:
         "loan_amount": loan_amount,
         "loan_interest_rate": loan_interest_rate,
         "loan_term_years": loan_term_years,
-        "starting_salary": starting_salary,
+        "part_time_monthly_income": part_time_monthly_income,
+        "starting_salary": starting_full_time_salary,
         "salary_growth_rate": salary_growth_rate,
         "monthly_expenses": monthly_expenses,
         "training_cost": training_cost,
         "simulation_years": simulation_years,
-        "part_time_monthly_income": part_time_monthly_income,
+
     }
     
     #Append the new row to the data frame
@@ -242,8 +341,11 @@ if submitted:
     st.success(f"Scenario '{name}' saved!")
     st.rerun()
     
-st.markdown("---")
-st.subheader("Run Simulation for a Scenario")
+st.markdown('<div class="scenario-card">', unsafe_allow_html=True)
+
+#--- Single scenario simulation card ---
+st.markdown('<div class="section-title">Analyze a single scenario</div>', 
+            unsafe_allow_html=True)
 
 if len(scenarios_df) == 0:
     st.info("No scenario saved yet. Add a scenario above to run a simulation.")
@@ -290,8 +392,18 @@ else:
     st.metric("Savings at end of simulation", f"${final_row['savings']:,.0f}")
     st.metric("Remaining loan balance", f"${final_row['loan_balance']:,.0f}")
     
-st.markdown("---")
-st.subheader("Compare Two Scenarios (Savings Over Time)")
+st.markdown('</div>', unsafe_allow_html=True)
+
+st.subheader("Saved Scenarios")
+st.dataframe(scenarios_df)
+
+st.write("Number of scenarios:", len(scenarios_df))
+
+
+#--- Comparison card ---
+st.markdown('<div class="scenario-card">', unsafe_allow_html=True)
+st.markdown('<div class="section-title">Compare two scenarios</div>',
+            unsafe_allow_html=True)
 
 if len(scenarios_df) < 2:
     st.info("You need at least two saved scenarios to compare. Add more above.")
@@ -329,8 +441,14 @@ else:
         st.markdown("#### Savings comparison")
         
         fig3, ax3 = plt.subplots()
-        ax3.plot(compare_df.index, compare_df.iloc[:, 0], color=COLOR_SCENARIO_A, label=name_a)
-        ax3.plot(compare_df.index, compare_df.iloc[:, 1], color=COLOR_SCENARIO_B, label=name_b)
+        ax3.plot(
+            compare_df.index,
+            compare_df.iloc[:, 0],
+            color=COLOR_SCENARIO_A, label=name_a)
+        ax3.plot(
+            compare_df.index,
+            compare_df.iloc[:, 1],
+            color=COLOR_SCENARIO_B, label=name_b)
         
         ax3.set_xlabel("Year")
         ax3.set_ylabel("Savings ($)")
@@ -346,10 +464,15 @@ else:
         
         summary_df = pd.DataFrame(
             {
-                "scerario": [name_a, name_b],
+                "scenario": [name_a, name_b],
                 "path_type": [row_a["path_type"], row_b["path_type"]],
                 "final_savings": [final_a["savings"], final_b["savings"]],
-                "final_loan_balance": [final_a["loan_balance"], final_b["loan_balance"]],
+                "final_loan_balance": [
+                    final_a["loan_balance"],
+                    final_b["loan_balance"],
+                    ],
             }
         )
         st.dataframe(summary_df)
+        
+st.markdown("</div>", unsafe_allow_html=True)
