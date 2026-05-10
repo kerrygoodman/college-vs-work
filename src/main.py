@@ -24,7 +24,10 @@ def ensure_data_dir():
 def load_scenarios() -> pd.DataFrame:
     ensure_data_dir()
     if SCENARIOS_CSV.exists():
-        return pd.read_csv(SCENARIOS_CSV)
+        try:
+            return pd.read_csv(SCENARIOS_CSV)
+        except pd.errors.EmptyDataError:
+            pass
     else:
         #Creates an empty data frame with the wanted columns
         cols =  [
