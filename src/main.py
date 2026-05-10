@@ -28,7 +28,7 @@ def load_scenarios() -> pd.DataFrame:
             return pd.read_csv(SCENARIOS_CSV)
         except pd.errors.EmptyDataError:
             pass
-    else:
+        
         #Creates an empty data frame with the wanted columns
         cols =  [
             "name",
