@@ -35,7 +35,8 @@ def load_scenarios() -> pd.DataFrame:
             "path_type",
             "years_in_school",
             "tuition_per_year",
-            "loan_amount",
+             "part_time_monthly_income",
+             "loan_amount",
             "loan_interest_rate",
             "loan_term_years",
             "starting_salary",
@@ -43,7 +44,6 @@ def load_scenarios() -> pd.DataFrame:
             "monthly_expenses",
             "training_cost",
             "simulation_years",
-            "part_time_monthly_income",
         ]
         return pd.DataFrame(columns=cols)
     
